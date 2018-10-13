@@ -1,5 +1,5 @@
 /*:
- * @plugindesc Places message box faces where I happen to want them.
+ * @plugindesc Places message box faces above the message box window, instead of inside.
  * @author Ben Hendel-Doying
  *
  * @help That's it!

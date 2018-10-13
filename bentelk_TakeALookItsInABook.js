@@ -8,12 +8,6 @@ Scene_Book.BOOKS = {
 
     // this is the book id: "sifStoneNotes"
     sifStoneNotes: [
-        {
-            title: "From the Developer",
-            body:
-                "What you're reading now is some of the last stuff I've got done so far! I'm aware some of the text is wonky, or gets cut off, or whatever... that'll be fixed later! Sorry about that :|<br><br>ALSO: You've almost seen all the content the game has to offer! (Or, depending on the order you did things in, maybe you HAVE already seen it all?) If you haven't already been back to your hometown of Wobville, I'd recommend going back there.<br><br>Anyway, thanks for playing this far; I'd love to hear what you thought about the experience!"
-        },
-
         // chapter 1:
         {
             title: "Strange Yellow Stone",
@@ -33,23 +27,12 @@ Scene_Book.BOOKS = {
             // body: "I said \"hello,\" but I don't think he was listening..."
         },
 
-        // you can have as many chapters as you want:
+        // you can have as many chapters as you want;
+        // make sure to put a comma between each { ... } block, if you add more
         {
             title: "Adventurer's Guild",
             body:
                 "We're finally starting the \"Adventurer's Guild\". I've long thought that the old tradition of sending children on a journey in order to become adults deserved greater recognition and support; if we can formalize the system, and reward travellers in exchange for their stories, we may be able to learn more about the Sif. I've talked to Tig and Pele; they believe that if I can put together some high-quality books, they can get schools and libraries to buy them. Yino knows some good writers; hopefully we can find one who doesn't need too much money >_>"
-        },
-
-        // make sure to put a comma between each { ... } block, if you add more
-        {
-            title: "Sif Stone (Blue)",
-            body:
-                "I spoke to a librarian in XXXXX about the Adventurer's Guild books. He was SUPER enthusiastic; apparently he's collected some traveller's stories from his friends. He's been writing a children's book based on the stories; he apparently reads them to his son, Guin; if he likes a chapter, then it's considered a success, and he adds it to his book. Anyway, he was willing to share his notes, and is happy to buy anything the Adventurer's Guild puts together, based on the sample I provided.<br><br>One of the stories mentioned a blue stone! I showed it to Yino, and we set out for the place two days later. It's located in a cave behind a waterfall, past XXXXX. As we got nearer, the yellow stone started to... react. It became... energized? The feeling is hard to describe. By the time we got to the waterfall, the feeling was intense. We could both feel it. It wasn't painful, or anything, just... STRONG.<br><br>Yino protested, but I touched the two stones together. For the instant they remained together, a brilliant light filled the room, but my hand was shot backwards beyond my control, and with it, the yellow stone, which clattered on the ground.<br><br>No harm came to us, and the stone seems unchanged, but Yino insisted we leave the blue stone alone; that it should remain a secret."
-        },
-        {
-            title: "Yino",
-            body:
-                "Yino and I had another argument about the Adventurer's Guild... what it's role should be... how to run it...<br><br>Then I said something I shouldn't have...<br><br><br><br>Yino's leaving with some friends to the White White Mountains..."
         },
         // ^ it's okay to have a comma after the end of the last chapter. it's optional, since
         // no chapters follow, but if you later add a chapter, you might forget to put this

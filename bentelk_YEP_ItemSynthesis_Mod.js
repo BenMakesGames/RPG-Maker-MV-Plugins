@@ -2,7 +2,11 @@
  * @plugindesc Disables weapon-crafting related portions of Yanfly's ItemSynthesis plugin.
  * @author Ben Hendel-Doying
  *
- * @help Must be included AFTER YEP_ItemSynthesis, of course.
+ * @help
+ * I happened to be making a game where I wanted crafting, but never weapon
+ * crafting (since weapons followed totally different rules).
+ *
+ * (Must be included AFTER YEP_ItemSynthesis, of course.)
  */
 
 Window_SynthesisCommand.prototype.addItemCommands = function() {

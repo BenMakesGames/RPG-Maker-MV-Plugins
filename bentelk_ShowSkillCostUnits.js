@@ -3,7 +3,7 @@
  * @author Ben Hendel-Doying
  *
  * @help
- * Also, don't worry: if you configured your game to display "MP" as something
+ * Also, don't worry: if you configured your game to display MP as something
  * else ("Mana", "Vitae", "EP", etc), that will be respected.
  *
  * If you'd like to customize the labels further, feel free to edit this plugin.
@@ -31,6 +31,6 @@ Window_SkillList.prototype.drawSkillCost = function(skill, x, y, width) {
         this.changeTextColor(this.mpCostColor());
 
         // similarly, TextManager.mpA contains the "MP (abbr)" value; replace it with whatever you want:
-        this.drawText(this._actor.skillMpCost(skill) + " Magic", x, y, width, 'right');
+        this.drawText(this._actor.skillMpCost(skill) + TextManager.mpA, x, y, width, 'right');
     }
 };

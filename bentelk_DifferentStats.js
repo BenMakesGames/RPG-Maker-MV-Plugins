@@ -2,7 +2,9 @@
  * @plugindesc Shows the stats I happen to be interested in on the Status and Equip screens.
  * @author Ben Hendel-Doying
  *
- * @help That's it!
+ * @help This plugin is not designed with customizability in mind; it was
+ * designed for a particular game I was making. If you'd like to show
+ * different stats, some extra work on your part will be required.
  *
  * Requires RPG Maker MV 1.6.1+ (due to use of ES6 functions and syntax).
  */
