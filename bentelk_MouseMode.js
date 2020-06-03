@@ -12,12 +12,12 @@
  * @default 0
  *
  * @param Mouse-mode-only Region
- * @desc Region # that can be crossed only when mouse-mode is enabled.
+ * @desc Region # that can be crossed only when mouse-mode is enabled. Multiple region #s can be specified, separated by commans and/or spaces.
  * Default: 6
  * @default 6
  *
  * @param Mouse-mode-excluded Region
- * @desc Region # that can NOT be crossed when mouse-mode is enabled.
+ * @desc Region # that can NOT be crossed when mouse-mode is enabled. Multiple region #s can be specified, separated by commans and/or spaces.
  * Default: 7
  * @default 7
  *
@@ -39,8 +39,18 @@
 (function() {
     const params = PluginManager.parameters('bentelk_MouseMode');
 
-    const mouseModeOnlyRegion = Number(params['Mouse-mode-only Region']);
-    const mouseModeExcludedRegion = Number(params['Mouse-mode-excluded Region']);
+    const mouseModeOnlyRegions = params['Mouse-mode-only Region']
+        .split(/[, \t\r\n]+/)
+        .filter(r => r !== '')
+        .map(r => Number(r))
+    ;
+
+    const mouseModeExcludedRegions = params['Mouse-mode-excluded Region']
+        .split(/[, \t\r\n]+/)
+        .filter(r => r !== '')
+        .map(r => Number(r))
+    ;
+
     const mouseModeSpriteSheetName = params['Mouse-mode Spritesheet Name'];
     const mouseModeSpriteSheetIndex = Number(params['Mouse-mode Spritesheet Index']);
 
@@ -82,20 +92,20 @@
     Game_CharacterBase.prototype.isMapPassable = function(x, y, d) {
         const regionId = this.getRegionId(x, y, d);
 
-        if($gameParty.mouseMode && regionId === mouseModeExcludedRegion)
+        if($gameParty.mouseMode && mouseModeExcludedRegions.indexOf(regionId) >= 0)
             return false;
 
-        if(!$gameParty.mouseMode && regionId === mouseModeOnlyRegion)
+        if(!$gameParty.mouseMode && mouseModeOnlyRegions.indexOf(regionId) >= 0)
             return false;
 
         return originalGameCharacterBaseIsMapPassable.call(this, x, y, d);
     };
 
     Game_CharacterBase.prototype.isMouseModeExcludedRegion = function() {
-        return this.getRegionId(this._x, this._y) === mouseModeExcludedRegion;
+        return mouseModeExcludedRegions.indexOf(this.getRegionId(this._x, this._y)) >= 0;
     };
 
     Game_CharacterBase.prototype.isMouseModeOnlyRegion = function() {
-        return this.getRegionId(this._x, this._y) === mouseModeOnlyRegion;
+        return mouseModeOnlyRegions.indexOf(this.getRegionId(this._x, this._y)) >= 0;
     };
 })();
