@@ -20,6 +20,8 @@
  *
  * * REPLACES Window_NameEdit refresh
  * * REPLACES Window_NameEdit itemRect
+ * * ADDS WindowNameEdit setTitle
+ * * ADDS WindowNameEdit TITLE
  */
 
 Window_NameEdit.TITLE = 'Enter a name';
