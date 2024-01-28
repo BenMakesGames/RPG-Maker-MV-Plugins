@@ -11,8 +11,6 @@
  * This plugin must be placed AFTER the other two.
  */
 (function() {
-    const originalGameMapIsPassable = Game_Map.prototype.isPassable;
-
     Game_Map.prototype.getRegionId = function(x, y, d) {
         switch (d) {
             case 1: return this.regionId(x - 1, y + 1);
@@ -27,6 +25,8 @@
             default: return this.regionId(x, y);
         }
     };
+
+    const originalGameMapIsPassable = Game_Map.prototype.isPassable;
 
     Game_Map.prototype.isPassable = function(x, y, d) {
         var regionId = this.getRegionId(x, y, d);
